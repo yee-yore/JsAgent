@@ -249,6 +249,8 @@ def task(agents, js_code):
         
         ## Types of Vulnerabilities to Look For (focus exclusively on this list)
         1. DOM-based XSS vulnerabilities (innerHTML, document.write, etc.)
+         - Pay special attention to cases where user-controllable data from URL parameters (location.search), hash fragments (location.hash), input fields (input.value), localStorage, etc. is inserted into the DOM
+         - Trace the complete data flow path from user input sources to DOM insertion points
         2. Input validation patterns that rely only on client-side validation
         3. Missing CSRF defenses
         4. Unsafe JSON parsing (using eval, etc.)
